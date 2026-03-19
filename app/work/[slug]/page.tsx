@@ -137,20 +137,69 @@ export default async function CaseStudyPage({
           </div>
         )}
 
-        {/* WIP notice */}
-        {project.wip && (
-          <div className="md:col-span-12">
-            <div className="border border-acid/20 bg-acid/[0.03] px-8 py-6 flex gap-4 items-start">
-              <span className="text-acid/60 text-lg mt-0.5 shrink-0">🚧</span>
+        {/* Images */}
+        {project.images && (
+          <div className="md:col-span-12 flex flex-col gap-16">
+            {/* Design System */}
+            {project.images.designSystem && (
               <div>
-                <p className="font-mono text-xs tracking-widest uppercase text-acid/60 mb-1">Work in Progress</p>
-                <p className="font-body text-sm text-smoke/70 leading-relaxed">
-                  This project is actively ongoing. Details and outcomes will continue to be updated as the work progresses.
-                </p>
+                <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
+                  Design System
+                </span>
+                <img
+                  src={project.images.designSystem}
+                  alt="Design system components"
+                  className="w-full border border-paper/10"
+                />
               </div>
-            </div>
+            )}
+
+            {/* Device mockups */}
+            {(project.images.desktop || project.images.mobile) && (
+              <div>
+                <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
+                  Designs
+                </span>
+                <div className="flex flex-col md:flex-row gap-8 items-start">
+                  {/* Laptop mockup */}
+                  {project.images.desktop && (
+                    <div className="flex-1">
+                      <div className="relative bg-[#1a1a1a] rounded-xl pt-6 px-4 pb-2 border border-paper/10 shadow-2xl">
+                        <div className="flex gap-1.5 mb-3">
+                          <span className="w-2.5 h-2.5 rounded-full bg-paper/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-paper/20" />
+                          <span className="w-2.5 h-2.5 rounded-full bg-paper/20" />
+                        </div>
+                        <img
+                          src={project.images.desktop}
+                          alt="Desktop design"
+                          className="w-full rounded-sm"
+                        />
+                      </div>
+                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">Desktop</p>
+                    </div>
+                  )}
+
+                  {/* Phone mockup */}
+                  {project.images.mobile && (
+                    <div className="w-48 shrink-0 mx-auto md:mx-0">
+                      <div className="relative bg-[#1a1a1a] rounded-[2rem] pt-8 px-3 pb-6 border border-paper/10 shadow-2xl">
+                        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-12 h-1 rounded-full bg-paper/20" />
+                        <img
+                          src={project.images.mobile}
+                          alt="Mobile design"
+                          className="w-full rounded-xl"
+                        />
+                      </div>
+                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">Mobile</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
+
         <div className="md:col-span-8">
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
             Outcome

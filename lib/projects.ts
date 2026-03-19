@@ -14,6 +14,11 @@ export type Project = {
   role: string;
   nda: boolean;
   wip: boolean;
+  images?: {
+    designSystem?: string;
+    desktop?: string;
+    mobile?: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -26,9 +31,7 @@ export const projects: Project[] = [
     tags: ["UX Research", "Design System", "E-commerce", "WCAG Audit"],
     impact: [
       { label: "Conversion increase", value: "+20%" },
-      { label: "Error reduction via QA", value: "−50%" },
-      { label: "Research-to-roadmap", value: "5 stages" },
-      { label: "Critical issues resolved", value: "6 months" },
+      { label: "Error reduction via QA", value: "−40%" },
     ],
     cover: "#131313",
     summary:
@@ -47,7 +50,12 @@ export const projects: Project[] = [
       "Conversion rates increased by 20% — double the original goal of +10% — driven by the refreshed checkout flow and improved UX. Developer errors reduced by 50% through systematic QA reviews. The design system is now a living foundation that grows with the product. The project is still in progress, with upcoming focus on advanced checkout flows, search/filtering, and further usability testing.",
     role: "Lead Product Designer (sole designer) — WCAG audit, research strategy, design system, roadmap, developer collaboration, team hiring.",
     nda: false,
-    wip: true,
+    wip: false,
+    images: {
+      designSystem: "/tc-design-system.png",
+      desktop: "/tc-desktop.png",
+      mobile: "/tc-mobile.png",
+    },
   },
   {
     slug: "twocontinents-dashboard",
