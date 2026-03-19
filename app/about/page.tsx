@@ -143,7 +143,7 @@ export default function AboutPage() {
       <div className="border border-paper/10 p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <p className="font-display font-bold text-display-md text-paper leading-tight mb-2">
-            Let's work together.
+            Let&apos;s work together.
           </p>
           <p className="font-body text-sm text-smoke">
             Open to Senior Product Design and Product Engineer roles.
