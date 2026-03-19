@@ -76,29 +76,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── IMPACT NUMBERS ───────────────────────────────────────────────── */}
-      <section className="px-6 md:px-10 py-20 border-t border-paper/10">
-        <p className="font-mono text-xs tracking-widest uppercase text-smoke mb-12">
-          By the numbers
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { value: "+30%", label: "Conversion uplift" },
-            { value: "−40%", label: "Dev error rate" },
-            { value: "+20%", label: "Email CTR" },
-            { value: "50+", label: "Design system components" },
-          ].map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-2">
-              <span className="font-display font-extrabold text-display-md text-acid leading-none">
-                {stat.value}
-              </span>
-              <span className="font-mono text-xs text-smoke tracking-wider">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ── CAPABILITIES ─────────────────────────────────────────────────── */}
       <section className="px-6 md:px-10 py-20 border-t border-paper/10">
