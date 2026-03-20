@@ -97,8 +97,6 @@ export const projects: Project[] = [
     impact: [
       { label: "Email CTR increase", value: "+10%" },
       { label: "Revenue growth", value: "+5%" },
-      { label: "Tools introduced", value: "3" },
-      { label: "First qual. research", value: "✓" },
     ],
     cover: "#0D0D0D",
     summary:
