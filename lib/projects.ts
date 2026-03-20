@@ -66,9 +66,7 @@ export const projects: Project[] = [
     tags: ["Dashboard", "Product Discovery", "Automation", "shadcn/ui"],
     impact: [
       { label: "Task time reduction", value: "30→3 min" },
-      { label: "Process", value: "Automated" },
       { label: "Users interviewed", value: "7" },
-      { label: "Onboarding", value: "Faster" },
     ],
     cover: "#0F0F0F",
     summary:
