@@ -64,10 +64,10 @@ export default async function CaseStudyPage({
       </div>
 
       {/* Impact stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 pb-16 border-b border-paper/10">
+      <div className={`grid gap-8 mb-20 pb-16 border-b border-paper/10 ${project.impact.length <= 2 ? "grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
         {project.impact.map((stat) => (
           <div key={stat.label} className="flex flex-col gap-2">
-            <span className="font-display font-extrabold text-display-md text-acid leading-none">
+            <span className="font-display font-extrabold text-display-md text-acid leading-none whitespace-nowrap">
               {stat.value}
             </span>
             <span className="font-mono text-xs text-smoke tracking-wider">
