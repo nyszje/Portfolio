@@ -16,6 +16,7 @@ export type Project = {
   wip: boolean;
   coverImage?: string;
   heroCover?: string;
+  vimeoId?: string;
   images?: {
     designSystem?: string;
     desktop?: string;
@@ -55,6 +56,7 @@ export const projects: Project[] = [
     wip: false,
     coverImage: "/cover-twocontinents-website.png",
     heroCover: "/hero-twocontinents-website.png",
+    vimeoId: "1175917145",
     images: {
       designSystem: "/tc-design-system.png",
     },

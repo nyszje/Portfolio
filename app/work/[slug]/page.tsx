@@ -148,6 +148,24 @@ export default async function CaseStudyPage({
           </div>
         )}
 
+        {/* Vimeo video */}
+        {project.vimeoId && (
+          <div className="md:col-span-12">
+            <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
+              Live Preview
+            </span>
+            <div style={{ padding: "64.99% 0 0 0", position: "relative" }}>
+              <iframe
+                src={`https://player.vimeo.com/video/${project.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1`}
+                style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: 0 }}
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Project video"
+              />
+            </div>
+          </div>
+        )}
+
         {/* Images */}
         {project.images && (
           <div className="md:col-span-12 flex flex-col gap-16">
