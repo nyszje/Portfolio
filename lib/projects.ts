@@ -57,8 +57,6 @@ export const projects: Project[] = [
     heroCover: "/hero-twocontinents-website.png",
     images: {
       designSystem: "/tc-design-system.png",
-      desktop: "/tc-desktop.png",
-      mobile: "/tc-mobile.png",
     },
   },
   {
