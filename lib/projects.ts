@@ -126,6 +126,7 @@ export const projects: Project[] = [
     nda: false,
     wip: false,
     coverImage: "/cover-gog.png",
+    heroCover: "/cover-gog.png",
   },
 ];
 

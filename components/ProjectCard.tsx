@@ -69,7 +69,7 @@ export default function ProjectCard({
           <img
             src={project.coverImage}
             alt={project.title.replace("\n", " ")}
-            className="w-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+            className="w-full max-h-[320px] object-cover object-top group-hover:scale-[1.01] transition-transform duration-500"
           />
         </div>
       )}
