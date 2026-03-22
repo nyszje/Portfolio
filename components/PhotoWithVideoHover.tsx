@@ -20,7 +20,7 @@ export default function PhotoWithVideoHover({
 
   return (
     <div
-      className={`relative overflow-hidden ${className}`}
+      className={className}
       onMouseEnter={() => { setHovered(true); setLoaded(true); }}
       onMouseLeave={() => setHovered(false)}
     >
@@ -28,22 +28,28 @@ export default function PhotoWithVideoHover({
       <img
         src={src}
         alt={alt}
-        className={`w-full transition-opacity duration-300 ${imgClassName} ${hovered ? "opacity-0" : ""}`}
+        className={`w-full ${imgClassName}`}
       />
-      {loaded && (
-        <div
-          className={`absolute inset-0 transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-        >
-          <iframe
-            src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1`}
-            className="w-full h-full"
-            style={{ border: 0 }}
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            title="Video preview"
-          />
+
+      {/* Video slides in below the photo */}
+      <div
+        className={`grid transition-all duration-300 ease-in-out ${hovered ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+      >
+        <div className="overflow-hidden">
+          <div className="relative mt-2" style={{ paddingBottom: "177.78%" }}>
+            {loaded && (
+              <iframe
+                src={`https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1`}
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 0 }}
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Video preview"
+              />
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
