@@ -54,6 +54,7 @@ export const projects: Project[] = [
     nda: false,
     wip: false,
     coverImage: "/cover-twocontinents-website.png",
+    heroCover: "/hero-twocontinents-website.png",
     images: {
       designSystem: "/tc-design-system.png",
       desktop: "/tc-desktop.png",
