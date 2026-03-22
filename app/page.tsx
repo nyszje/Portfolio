@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/lib/projects";
-import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
-  const featured = projects.slice(0, 2);
 
   return (
     <>
@@ -57,7 +55,7 @@ export default function Home() {
 
       {/* ── SELECTED WORK ────────────────────────────────────────────────── */}
       <section className="px-6 md:px-10 py-16">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between mb-8">
           <span className="font-mono text-xs tracking-widest uppercase text-smoke">
             Selected Work
           </span>
@@ -69,9 +67,40 @@ export default function Home() {
           </Link>
         </div>
 
-        <div>
-          {featured.map((project, i) => (
-            <ProjectCard key={project.slug} project={project} index={i} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/work/${project.slug}`}
+              className="group border border-paper/10 hover:border-acid/40 transition-colors duration-300 flex flex-col"
+            >
+              {project.coverImage ? (
+                <div className="overflow-hidden">
+                  <img
+                    src={project.coverImage}
+                    alt={project.title.replace("\n", " ")}
+                    className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  />
+                </div>
+              ) : (
+                <div className="h-48 bg-paper/5" />
+              )}
+              <div className="p-6 flex flex-col gap-3 flex-1">
+                <h2 className="font-display font-extrabold text-display-sm text-paper group-hover:text-acid transition-colors duration-300 whitespace-pre-line leading-tight">
+                  {project.title}
+                </h2>
+                <p className="font-body text-sm text-smoke leading-relaxed">
+                  {project.subtitle}
+                </p>
+                <div className="flex flex-wrap gap-2 mt-auto pt-4">
+                  {project.tags.slice(0, 3).map((tag) => (
+                    <span key={tag} className="font-mono text-xs px-2 py-1 border border-paper/20 text-smoke group-hover:border-acid/40 transition-colors duration-300">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
