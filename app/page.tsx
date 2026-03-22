@@ -15,10 +15,12 @@ export default function Home() {
           <img src="/natalia.png" alt="" className="w-full object-contain" />
         </div>
 
-        <div className="mb-8 animate-fade-up">
-          <span className="font-mono text-xs tracking-widest uppercase text-acid border border-acid/30 px-3 py-1.5">
-            Product Designer · Facilitator · System Thinker
-          </span>
+        <div className="mb-8 animate-fade-up flex flex-wrap gap-2">
+          {["Product Designer", "Facilitator", "System Thinker"].map((label) => (
+            <span key={label} className="font-mono text-xs tracking-wider uppercase text-acid border border-acid/30 px-3 py-1.5">
+              {label}
+            </span>
+          ))}
         </div>
 
         <h1 className="font-display font-extrabold text-display-xl text-paper leading-none mb-8 animate-fade-up delay-100">

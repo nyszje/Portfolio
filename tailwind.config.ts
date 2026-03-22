@@ -19,13 +19,14 @@ const config: Config = {
         ink: "#0A0A0A",
         paper: "#F5F0E8",
         acid: "#4DA6FF",
-        smoke: "#8A8A8A",
+        smoke: "#ABABAB",
         mist: "#E8E3DB",
       },
       fontSize: {
-        "display-xl": ["clamp(4rem, 12vw, 11rem)", { lineHeight: "0.92", letterSpacing: "-0.03em" }],
-        "display-lg": ["clamp(3rem, 8vw, 7rem)", { lineHeight: "0.94", letterSpacing: "-0.02em" }],
-        "display-md": ["clamp(2rem, 5vw, 4rem)", { lineHeight: "1.0", letterSpacing: "-0.02em" }],
+        "display-xl": ["clamp(3rem, 10vw, 11rem)", { lineHeight: "0.92", letterSpacing: "-0.03em" }],
+        "display-lg": ["clamp(2.25rem, 7vw, 7rem)", { lineHeight: "0.94", letterSpacing: "-0.02em" }],
+        "display-md": ["clamp(1.75rem, 4.5vw, 4rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        "display-sm": ["clamp(1.25rem, 3vw, 2rem)", { lineHeight: "1.1", letterSpacing: "-0.01em" }],
       },
       animation: {
         "fade-up": "fadeUp 0.7s ease forwards",

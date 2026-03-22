@@ -18,17 +18,19 @@ export default function CursorDot() {
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
       my = e.clientY;
+      // Dot follows instantly — no lag
+      dot.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
     };
 
     const tick = () => {
-      dot.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
+      // Ring follows with slight lerp for smooth trail
+      rx += (mx - rx) * 0.25;
+      ry += (my - ry) * 0.25;
       ring.style.transform = `translate(${rx - 16}px, ${ry - 16}px)`;
       rafId = requestAnimationFrame(tick);
     };
 
-    window.addEventListener("mousemove", onMove);
+    window.addEventListener("mousemove", onMove, { passive: true });
     rafId = requestAnimationFrame(tick);
 
     const grow = () => ring.classList.add("!scale-150", "!border-acid/80");

@@ -7,7 +7,7 @@
     --ink: #0A0A0A;
     --paper: #F5F0E8;
     --acid: #4DA6FF;
-    --smoke: #8A8A8A;
+    --smoke: #ABABAB;
     --mist: #E8E3DB;
   }
 
@@ -28,6 +28,17 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  /* Typography — prevent bad breaks */
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  p {
+    overflow-wrap: break-word;
   }
 
   /* Focus visible — WCAG 2.4.7 */
