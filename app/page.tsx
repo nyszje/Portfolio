@@ -134,6 +134,26 @@ export default function Home() {
           </div>
         </ScrollReveal>
       </section>
+
+      {/* ── CTA ──────────────────────────────────────────────────────────── */}
+      <section className="px-6 md:px-10 py-6 border-t border-paper/10">
+        <div className="border border-paper/10 p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <p className="font-display font-bold text-display-md text-paper leading-tight mb-2">
+              Let&apos;s work together.
+            </p>
+            <p className="font-body text-sm text-smoke">
+              Open to Senior Product Design and Product Engineer roles.
+            </p>
+          </div>
+          <a
+            href="mailto:nat.maz98@gmail.com"
+            className="font-mono text-xs tracking-widest uppercase text-ink bg-acid px-6 py-3 hover:bg-paper transition-colors duration-200 shrink-0"
+          >
+            Get in touch →
+          </a>
+        </div>
+      </section>
     </>
   );
 }
