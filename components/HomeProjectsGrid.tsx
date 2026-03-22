@@ -38,15 +38,15 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
       className="group border border-paper/10 hover:border-acid/40 transition-colors duration-300 flex flex-col"
     >
       {project.coverImage ? (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden h-56 md:h-64">
           <img
             src={project.coverImage}
             alt={project.title.replace("\n", " ")}
-            className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
           />
         </div>
       ) : (
-        <div className="h-48 bg-paper/5" aria-hidden="true" />
+        <div className="h-56 md:h-64 bg-paper/5" aria-hidden="true" />
       )}
       <div className="p-6 flex flex-col gap-3 flex-1">
         <h3 className="font-display font-extrabold text-display-sm text-paper group-hover:text-acid transition-colors duration-300 whitespace-pre-line leading-tight">
