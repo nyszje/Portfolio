@@ -15,6 +15,7 @@ export type Project = {
   nda: boolean;
   wip: boolean;
   coverImage?: string;
+  heroCover?: string;
   images?: {
     designSystem?: string;
     desktop?: string;
@@ -89,6 +90,7 @@ export const projects: Project[] = [
     nda: true,
     wip: true,
     coverImage: "/cover-twocontinents-dashboard.png",
+    heroCover: "/hero-twocontinents-dashboard.png",
   },
   {
     slug: "gog-newsletter-system",

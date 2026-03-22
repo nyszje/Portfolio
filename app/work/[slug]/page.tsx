@@ -63,6 +63,17 @@ export default async function CaseStudyPage({
         </div>
       </div>
 
+      {/* Hero cover */}
+      {project.heroCover && (
+        <div className="mb-16 -mx-6 md:-mx-10">
+          <img
+            src={project.heroCover}
+            alt={project.title.replace("\n", " ")}
+            className="w-full object-cover"
+          />
+        </div>
+      )}
+
       {/* Impact stats */}
       <div className={`grid gap-8 mb-20 pb-16 border-b border-paper/10 ${project.impact.length <= 2 ? "grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
         {project.impact.map((stat) => (
