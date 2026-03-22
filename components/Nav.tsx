@@ -32,6 +32,10 @@ export default function Nav() {
         <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
           Product Design · Product Engineering
         </span>
+        <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
+        <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
+          Warsaw · Remote / Hybrid
+        </span>
       </div>
 
       {/* Nav links */}
