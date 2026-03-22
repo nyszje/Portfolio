@@ -14,6 +14,7 @@ export type Project = {
   role: string;
   nda: boolean;
   wip: boolean;
+  coverImage?: string;
   images?: {
     designSystem?: string;
     desktop?: string;
@@ -51,6 +52,7 @@ export const projects: Project[] = [
     role: "Lead Product Designer (sole designer) — WCAG audit, research strategy, design system, roadmap, developer collaboration, team hiring.",
     nda: false,
     wip: false,
+    coverImage: "/cover-twocontinents-website.png",
     images: {
       designSystem: "/tc-design-system.png",
       desktop: "/tc-desktop.png",
@@ -86,6 +88,7 @@ export const projects: Project[] = [
     role: "Product Designer — discovery research, user interviews, user flow, wireframing, UI design (under NDA), developer collaboration.",
     nda: true,
     wip: true,
+    coverImage: "/cover-twocontinents-dashboard.png",
   },
   {
     slug: "gog-newsletter-system",

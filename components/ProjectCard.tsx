@@ -63,6 +63,17 @@ export default function ProjectCard({
         </div>
       </div>
 
+      {/* Cover image */}
+      {project.coverImage && (
+        <div className="mt-8 overflow-hidden">
+          <img
+            src={project.coverImage}
+            alt={project.title.replace("\n", " ")}
+            className="w-full object-cover group-hover:scale-[1.01] transition-transform duration-500"
+          />
+        </div>
+      )}
+
       {/* Arrow indicator */}
       <div className="flex justify-end mt-4">
         <span className="font-display text-smoke group-hover:text-acid transition-all duration-300 group-hover:translate-x-1 inline-block">
