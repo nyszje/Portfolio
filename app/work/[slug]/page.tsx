@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getProject, projects } from "@/lib/projects";
+import CounterStat from "@/components/CounterStat";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -77,38 +79,31 @@ export default async function CaseStudyPage({
       {/* Impact stats */}
       <div className={`grid gap-8 mb-20 pb-16 border-b border-paper/10 ${project.impact.length <= 2 ? "grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
         {project.impact.map((stat) => (
-          <div key={stat.label} className="flex flex-col gap-2">
-            <span className="font-display font-extrabold text-display-md text-acid leading-none whitespace-nowrap">
-              {stat.value}
-            </span>
-            <span className="font-mono text-xs text-smoke tracking-wider">
-              {stat.label}
-            </span>
-          </div>
+          <CounterStat key={stat.label} value={stat.value} label={stat.label} />
         ))}
       </div>
 
       {/* Content grid */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-x-12 gap-y-16">
         {/* Summary */}
-        <div className="md:col-span-4">
+        <ScrollReveal className="md:col-span-4">
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
             Overview
           </span>
           <p className="font-body text-base text-paper/80 leading-relaxed">
             {project.summary}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Problem */}
-        <div className="md:col-span-8">
+        <ScrollReveal className="md:col-span-8" delay={100}>
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
             The Problem
           </span>
           <p className="font-body text-base text-paper/80 leading-relaxed">
             {project.problem}
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Process */}
         <div className="md:col-span-12">
@@ -124,7 +119,7 @@ export default async function CaseStudyPage({
                 <span className="font-mono text-xs text-smoke/40 mt-1 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <p className="font-body text-sm text-paper/70 leading-relaxed">
+                <p className="font-body text-sm text-paper/90 leading-relaxed">
                   {step}
                 </p>
               </div>
@@ -138,8 +133,8 @@ export default async function CaseStudyPage({
             <div className="border border-paper/10 bg-paper/[0.03] px-8 py-6 flex gap-4 items-start">
               <span className="text-smoke/40 text-lg mt-0.5 shrink-0">⊘</span>
               <div>
-                <p className="font-mono text-xs tracking-widest uppercase text-smoke/60 mb-1">NDA</p>
-                <p className="font-body text-sm text-smoke/70 leading-relaxed">
+                <p className="font-mono text-xs tracking-widest uppercase text-smoke mb-1">NDA</p>
+                <p className="font-body text-sm text-smoke leading-relaxed">
                   Wireframes, sketches, and UI designs for this project are covered by a non-disclosure agreement
                   and cannot be shared publicly. Happy to walk through the work in detail during a conversation.
                 </p>

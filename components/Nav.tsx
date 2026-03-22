@@ -18,6 +18,7 @@ export default function Nav() {
       <nav className="flex items-center justify-between px-6 md:px-10 py-6">
         <Link
           href="/"
+          aria-label="Natalia Tomala — home"
           className="font-display font-bold text-sm tracking-widest uppercase text-paper hover:text-acid transition-colors duration-200"
         >
           NT
@@ -30,7 +31,7 @@ export default function Nav() {
                 <a
                   href={link.href}
                   download
-                  className="font-mono text-xs tracking-wider uppercase text-paper/60 hover:text-acid transition-colors duration-200"
+                  className="nav-link font-mono text-xs tracking-wider uppercase text-paper/60 hover:text-acid transition-colors duration-200"
                 >
                   {link.label}
                 </a>
@@ -40,9 +41,9 @@ export default function Nav() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "font-mono text-xs tracking-wider uppercase transition-colors duration-200",
+                    "nav-link font-mono text-xs tracking-wider uppercase transition-colors duration-200",
                     pathname?.startsWith(link.href)
-                      ? "text-acid"
+                      ? "text-acid active"
                       : "text-paper/60 hover:text-paper"
                   )}
                 >
