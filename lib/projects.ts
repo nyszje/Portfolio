@@ -102,8 +102,8 @@ export const projects: Project[] = [
     year: "2023–2024",
     tags: ["Email Design", "Landing Pages", "Research", "A/B Testing"],
     impact: [
-      { label: "Email CTR increase", value: "+10%" },
-      { label: "Revenue growth", value: "+5%" },
+      { label: "Email CTR increase", value: "+12%" },
+      { label: "Unsubscribe reduction", value: "−10%" },
     ],
     cover: "#0D0D0D",
     summary:
@@ -118,7 +118,7 @@ export const projects: Project[] = [
       "Conducted first qualitative research and usability testing sessions with real users. Participated in A/B tests to validate design decisions. Gained hands-on experience with Webflow, GetResponse, and SalesManago.",
     ],
     outcome:
-      "New email templates increased CTR by 10% and revenue by 5%. The Thaumaturge landing page successfully reflected the game's tone and drove high contest participation. Introduced a research and testing culture that shaped how the team made design decisions going forward.",
+      "This initiative was validated through A/B testing and led directly to: +12% increase in Click-Through Rate (CTR), 10% reduction in unsubscribes, and a positive increase in gross revenue. The Thaumaturge landing page successfully reflected the game's tone and drove high contest participation. Introduced a research and testing culture that shaped how the team made design decisions going forward.",
     role: "Product Designer — email design, landing pages, usability testing, A/B testing, platform features (website & GOG GALAXY).",
     nda: false,
     wip: false,
