@@ -51,7 +51,7 @@ export const projects: Project[] = [
       "Worked closely with developers throughout implementation, running monthly UX/UI QA reviews to catch errors early. As scope grew, hired and onboarded a new UX/UI designer to accelerate delivery.",
     ],
     outcome:
-      "Conversion rates increased by 20% — double the original goal of +10% — driven by the refreshed checkout flow and improved UX. Developer errors reduced by 50% through systematic QA reviews. The design system is now a living foundation that grows with the product. The project is still in progress, with upcoming focus on advanced checkout flows, search/filtering, and further usability testing.",
+      "Conversion rates increased by 20% — double the original goal of +10% — driven by the refreshed checkout flow and improved UX. Developer errors reduced by 40% through systematic QA reviews. The design system is now a living foundation that grows with the product. The project is still in progress, with upcoming focus on advanced checkout flows, search/filtering, and further usability testing.",
     role: "Lead Product Designer (sole designer) — WCAG audit, research strategy, design system, roadmap, developer collaboration, team hiring.",
     nda: false,
     wip: false,
