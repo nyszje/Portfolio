@@ -14,8 +14,28 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-      <nav className="flex items-center justify-between px-6 md:px-10 py-6">
+    <header className="fixed top-0 left-0 right-0 z-[10000] flex flex-col bg-ink">
+      {/* Availability banner */}
+      <div className="border-b border-acid px-6 md:px-10 py-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+        <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium flex items-center gap-2">
+          <span className="relative flex h-2 w-2 shrink-0">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
+          </span>
+          Availability: <strong className="text-acid">ASAP</strong>
+        </span>
+        <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
+        <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
+          Full-time
+        </span>
+        <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
+        <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
+          Product Design · Product Engineering
+        </span>
+      </div>
+
+      {/* Nav links */}
+      <nav className="flex items-center justify-between px-6 md:px-10 py-5 mix-blend-difference">
         <Link
           href="/"
           aria-label="Natalia Tomala — home"

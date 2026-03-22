@@ -32,7 +32,7 @@ export default async function CaseStudyPage({
   if (!project) notFound();
 
   return (
-    <article className="px-6 md:px-10 pt-36 pb-24">
+    <article className="px-6 md:px-10 pt-44 pb-24">
       {/* Back */}
       <Link
         href="/work"

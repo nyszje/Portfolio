@@ -34,7 +34,7 @@ const certificates = [
 
 export default function AboutPage() {
   return (
-    <div className="px-6 md:px-10 pt-40 pb-24">
+    <div className="px-6 md:px-10 pt-48 pb-24">
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-paper/20 pb-16 mb-20">
         <div className="flex flex-col gap-6">

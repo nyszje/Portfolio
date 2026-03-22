@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <section className="px-6 md:px-10 pt-40 pb-24">
+    <section className="px-6 md:px-10 pt-48 pb-24">
       {/* Header */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 border-b border-paper/20 pb-12">
         <h1 className="font-display font-extrabold text-display-lg text-paper leading-none">

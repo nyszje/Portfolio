@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="min-h-screen flex flex-col justify-end px-6 md:px-10 pb-16 pt-32 relative overflow-hidden">
+      <section className="min-h-screen flex flex-col justify-end px-6 md:px-10 pb-16 pt-40 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-px h-[60vh] bg-gradient-to-b from-transparent via-acid/40 to-transparent" aria-hidden="true" />
 
         <div className="absolute top-24 right-10 w-32 md:w-48 hidden md:block">
