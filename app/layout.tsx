@@ -52,6 +52,21 @@ export default function RootLayout({
     >
       <body className="grain bg-ink text-paper min-h-screen flex flex-col">
         <a href="#main-content" className="skip-link">Skip to content</a>
+        <div className="sticky top-0 z-[10000] bg-acid text-ink w-full">
+          <div className="px-6 md:px-10 py-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-1">
+            <span className="font-mono text-xs tracking-widest uppercase font-medium">
+              Availability: <strong>ASAP</strong>
+            </span>
+            <span className="font-mono text-xs text-ink/40 hidden sm:inline">·</span>
+            <span className="font-mono text-xs tracking-widest uppercase font-medium">
+              Full-time
+            </span>
+            <span className="font-mono text-xs text-ink/40 hidden sm:inline">·</span>
+            <span className="font-mono text-xs tracking-widest uppercase font-medium">
+              Product Design · Product Engineering
+            </span>
+          </div>
+        </div>
         <Nav />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
