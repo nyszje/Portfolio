@@ -125,6 +125,7 @@ export const projects: Project[] = [
     role: "Product Designer — email design, landing pages, usability testing, A/B testing, platform features (website & GOG GALAXY).",
     nda: false,
     wip: false,
+    coverImage: "/cover-gog.png",
   },
 ];
 
