@@ -77,7 +77,7 @@ export default async function CaseStudyPage({
       </div>
 
       {/* Impact stats */}
-      <div className={`grid gap-8 mb-20 pb-16 border-b border-paper/10 ${project.impact.length <= 2 ? "grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
+      <div className={`grid gap-8 mb-20 pb-16 border-b border-paper/10 ${project.impact.length <= 2 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-2 md:grid-cols-4"}`}>
         {project.impact.map((stat) => (
           <CounterStat key={stat.label} value={stat.value} label={stat.label} />
         ))}

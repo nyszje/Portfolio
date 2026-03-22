@@ -32,7 +32,7 @@ export default function CursorDot() {
     <div
       ref={dotRef}
       aria-hidden="true"
-      className="fixed top-0 left-0 z-[9998] w-2.5 h-2.5 rounded-full pointer-events-none hidden md:block transition-transform duration-100 bg-acid"
+      className="fixed top-0 left-0 z-[10002] w-2.5 h-2.5 rounded-full pointer-events-none hidden md:block transition-transform duration-100 bg-acid"
     />
   );
 }
