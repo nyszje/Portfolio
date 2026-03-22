@@ -18,7 +18,7 @@ const config: Config = {
       colors: {
         ink: "#0A0A0A",
         paper: "#F5F0E8",
-        acid: "#C8FF00",
+        acid: "#4DA6FF",
         smoke: "#8A8A8A",
         mist: "#E8E3DB",
       },

@@ -169,6 +169,25 @@ export default async function CaseStudyPage({
         {/* Images */}
         {project.images && (
           <div className="md:col-span-12 flex flex-col gap-16">
+            {/* Sketches */}
+            {project.images.sketches && project.images.sketches.length > 0 && (
+              <div>
+                <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
+                  Lo-fi Sketches
+                </span>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {project.images.sketches.map((src, i) => (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`Sketch ${i + 1}`}
+                      className="w-full object-cover border border-paper/10"
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Design System */}
             {project.images.designSystem && (
               <div>

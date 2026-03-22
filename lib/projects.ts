@@ -21,6 +21,7 @@ export type Project = {
     designSystem?: string;
     desktop?: string;
     mobile?: string;
+    sketches?: string[];
   };
 };
 
@@ -92,6 +93,9 @@ export const projects: Project[] = [
     wip: true,
     coverImage: "/cover-twocontinents-dashboard.png",
     heroCover: "/hero-twocontinents-dashboard.png",
+    images: {
+      sketches: ["/dash-sketch-1.jpg", "/dash-sketch-2.jpg", "/dash-sketch-3.jpg"],
+    },
   },
   {
     slug: "gog-newsletter-system",
