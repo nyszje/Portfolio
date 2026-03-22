@@ -96,7 +96,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gog-newsletter-system",
-    title: "GOG.com\nDesign Work",
+    title: "GOG.com",
     subtitle: "Email templates, landing pages, and platform features for a global gaming platform — +10% CTR, +5% revenue.",
     company: "GOG.com · CD PROJEKT Group",
     year: "2023–2024",
