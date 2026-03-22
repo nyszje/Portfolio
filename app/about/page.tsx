@@ -1,4 +1,4 @@
-import Link from "next/link";
+import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
 
 export const metadata = {
   title: "About — Natalia Tomala",
@@ -41,11 +41,12 @@ export default function AboutPage() {
           <h1 className="font-display font-extrabold text-display-lg text-paper leading-none">
             About
           </h1>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <PhotoWithVideoHover
             src="/natalia.png"
             alt="Natalia Tomala"
-            className="w-40 opacity-80 mix-blend-luminosity"
+            videoId="1175926062"
+            imgClassName="opacity-80 mix-blend-luminosity"
+            className="w-40"
           />
         </div>
         <div className="flex flex-col justify-end gap-6">

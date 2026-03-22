@@ -2,6 +2,7 @@ import Link from "next/link";
 import { projects } from "@/lib/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import HomeProjectsGrid from "@/components/HomeProjectsGrid";
+import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
 
 export default function Home() {
   return (
@@ -10,9 +11,13 @@ export default function Home() {
       <section className="min-h-screen flex flex-col justify-end px-6 md:px-10 pb-16 pt-32 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-px h-[60vh] bg-gradient-to-b from-transparent via-acid/40 to-transparent" aria-hidden="true" />
 
-        <div className="absolute top-24 right-10 w-32 md:w-48 opacity-60 mix-blend-luminosity hidden md:block" aria-hidden="true">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/natalia.png" alt="" className="w-full object-contain" />
+        <div className="absolute top-24 right-10 w-32 md:w-48 hidden md:block">
+          <PhotoWithVideoHover
+            src="/natalia.png"
+            alt=""
+            videoId="1175926062"
+            imgClassName="object-contain opacity-60 mix-blend-luminosity"
+          />
         </div>
 
         <div className="mb-8 animate-fade-up flex flex-wrap gap-2">
