@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Lock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -76,6 +77,20 @@ export default function Nav() {
               </li>
             )
           )}
+          <li>
+            <Link
+              href="/bragbook"
+              className={cn(
+                "nav-link font-mono text-xs tracking-wider uppercase transition-colors duration-200 flex items-center gap-1.5",
+                pathname?.startsWith("/bragbook")
+                  ? "text-acid active"
+                  : "text-paper/60 hover:text-paper"
+              )}
+            >
+              Bragbook
+              <Lock className="w-3 h-3" aria-hidden="true" />
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
