@@ -7,7 +7,7 @@ export const metadata = {
 
 const timeline = [
   {
-    year: "2024–Now",
+    year: "2024–04/2026",
     role: "Product Designer",
     company: "CodeYourBrand",
     note: "TwoContinents platform - website redesign (+30% conversion), internal dashboard, design system (50+ components), research strategy.",
