@@ -56,7 +56,7 @@ export const projects: Project[] = [
     nda: false,
     wip: false,
     coverImage: "/cover_TWC.png",
-    heroCover: "/hero-twocontinents-website.png",
+    heroCover: "/cover_TWC.png",
     vimeoId: "1175917145",
     images: {
       designSystem: "/tc-design-system.png",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     nda: true,
     wip: true,
     coverImage: "/cover_dashboard.png",
-    heroCover: "/hero-twocontinents-dashboard.png",
+    heroCover: "/cover_dashboard.png",
   },
   {
     slug: "gog-newsletter-system",
