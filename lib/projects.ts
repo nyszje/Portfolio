@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: "TwoContinents\nWebsite",
     subtitle: "Full redesign of a Dubai travel e-commerce platform - design system from scratch, +20% conversion (goal was +10%).",
     company: "CodeYourBrand",
-    year: "2024–04/2026",
+    year: "2024-04/2026",
     tags: ["UX Research", "Design System", "E-commerce", "WCAG Audit"],
     impact: [
       { label: "Conversion increase", value: "+20%" },
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     title: "TwoContinents\nDashboard",
     subtitle: "Replacing a 30-minute manual process with a 3-minute automated flow - through discovery research and MVP design.",
     company: "CodeYourBrand",
-    year: "2025–04/2026",
+    year: "2025-04/2026",
     tags: ["Dashboard", "Product Discovery", "Automation", "shadcn/ui"],
     impact: [
       { label: "Task time reduction", value: "30→3 min" },
@@ -90,7 +90,7 @@ export const projects: Project[] = [
       "Average task time dropped from 30 minutes to 3 minutes. New employees can now complete tour creation independently, without guidance from senior staff - reducing training time and increasing task accuracy across the team.",
     role: "Product Designer - discovery research, user interviews, user flow, wireframing, UI design (under NDA), developer collaboration.",
     nda: true,
-    wip: true,
+    wip: false,
     coverImage: "/cover_dashboard.png",
     heroCover: "/cover_dashboard.png",
   },
