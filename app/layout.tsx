@@ -3,7 +3,6 @@ import { Syne, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import CursorDot from "@/components/CursorDot";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -55,7 +54,6 @@ export default function RootLayout({
         <Nav />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <CursorDot />
         <Analytics />
         <SpeedInsights />
       </body>

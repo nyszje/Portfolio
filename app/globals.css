@@ -63,10 +63,6 @@
   ::-webkit-scrollbar-thumb { background: #3A3A3A; }
   ::-webkit-scrollbar-thumb:hover { background: #4DA6FF; }
 
-  /* Custom cursor — only on pointer devices */
-  @media (hover: hover) and (min-width: 768px) {
-    *, *::before, *::after { cursor: none !important; }
-  }
 }
 
 @layer utilities {
