@@ -57,7 +57,7 @@ export default function ProjectCard({
 
           <div className="flex items-center gap-4 mt-2">
             <span className="font-mono text-xs text-smoke">{project.company}</span>
-            <span className="font-mono text-xs text-smoke/40">—</span>
+            <span className="font-mono text-xs text-smoke/40">-</span>
             <span className="font-mono text-xs text-smoke">{project.year}</span>
           </div>
         </div>

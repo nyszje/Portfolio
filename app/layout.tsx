@@ -28,13 +28,13 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Natalia Tomala — Product Designer",
+  title: "Natalia Tomala - Product Designer",
   description:
     "Product Designer specialising in UX research, design systems, and 0→1 product development.",
   openGraph: {
-    title: "Natalia Tomala — Product Designer",
+    title: "Natalia Tomala - Product Designer",
     description:
-      "Portfolio of Natalia Tomala — Product Designer at the intersection of research, systems thinking, and product engineering.",
+      "Portfolio of Natalia Tomala - Product Designer at the intersection of research, systems thinking, and product engineering.",
     type: "website",
   },
 };

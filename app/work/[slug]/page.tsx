@@ -17,7 +17,7 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return {};
   return {
-    title: `${project.title.replace("\n", " ")} — Natalia Tomala`,
+    title: `${project.title.replace("\n", " ")} - Natalia Tomala`,
     description: project.subtitle,
   };
 }

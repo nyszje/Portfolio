@@ -42,7 +42,7 @@ export default function Nav() {
       <nav className="flex items-center justify-between px-6 md:px-10 py-5 mix-blend-difference">
         <Link
           href="/"
-          aria-label="Natalia Tomala — home"
+          aria-label="Natalia Tomala - home"
           className="font-display font-bold text-sm tracking-widest uppercase text-paper hover:text-acid transition-colors duration-200"
         >
           NT

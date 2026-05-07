@@ -1,7 +1,7 @@
 import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
 
 export const metadata = {
-  title: "About — Natalia Tomala",
+  title: "About - Natalia Tomala",
   description: "Product Designer based in Warsaw, Poland.",
 };
 
@@ -10,13 +10,13 @@ const timeline = [
     year: "2024–Now",
     role: "Product Designer",
     company: "CodeYourBrand",
-    note: "TwoContinents platform — website redesign (+30% conversion), internal dashboard, design system (50+ components), research strategy.",
+    note: "TwoContinents platform - website redesign (+30% conversion), internal dashboard, design system (50+ components), research strategy.",
   },
   {
     year: "2023–2024",
     role: "Product Designer",
     company: "GOG.com · CD PROJEKT Group",
-    note: "R&D team — 0→1 newsletter system (+20% CTR, +10% revenue), 10 user interviews, product card research, pre-launch validation.",
+    note: "R&D team - 0→1 newsletter system (+20% CTR, +10% revenue), 10 user interviews, product card research, pre-launch validation.",
   },
   {
     year: "2021–2024",
@@ -27,9 +27,9 @@ const timeline = [
 ];
 
 const certificates = [
-  { name: "Product Metrics", issuer: "[ation] center — Michał Witkowski", year: "2025" },
-  { name: "Product Discovery", issuer: "[ation] center — Iga Mościchowska", year: "2025" },
-  { name: "Google Analytics 4", issuer: "Owwwla — Aleksandra Görlich", year: "2026" },
+  { name: "Product Metrics", issuer: "[ation] center - Michał Witkowski", year: "2025" },
+  { name: "Product Discovery", issuer: "[ation] center - Iga Mościchowska", year: "2025" },
+  { name: "Google Analytics 4", issuer: "Owwwla - Aleksandra Görlich", year: "2026" },
 ];
 
 export default function AboutPage() {
@@ -56,11 +56,11 @@ export default function AboutPage() {
           <p className="font-body text-base text-smoke leading-relaxed">
             I design high-impact features that convert user needs into business growth.
             My work spans 0→1 products, mature platforms, gaming (GOG.com),
-            and travel e-commerce — always grounded in research, built with
+            and travel e-commerce - always grounded in research, built with
             systems thinking, and measured by real outcomes.
           </p>
           <p className="font-body text-base text-smoke leading-relaxed">
-            I care about closing the gap between design and engineering —
+            I care about closing the gap between design and engineering -
             through quality handoffs, weekly review sessions, and WCAG-compliant systems
             that developers can actually build from.
           </p>

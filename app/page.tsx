@@ -36,13 +36,13 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 border-t border-paper/20 pt-8 animate-fade-up delay-200">
           <p className="font-body text-base md:text-lg text-smoke leading-relaxed max-w-md">
-            Designing high-impact features that convert user needs into business growth —
+            Designing high-impact features that convert user needs into business growth -
             grounded in research, built with systems thinking, measured by outcomes.
           </p>
 
           <div className="flex flex-col md:items-end gap-3">
             <div className="font-mono text-xs text-smoke tracking-wider space-y-1">
-              <p>GOG.com — CD PROJEKT Group</p>
+              <p>GOG.com - CD PROJEKT Group</p>
               <p>CodeYourBrand / TwoContinents</p>
               <p>Warsaw, Poland · 3+ years XP</p>
             </div>

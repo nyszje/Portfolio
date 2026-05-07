@@ -2,7 +2,7 @@ import { projects } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 
 export const metadata = {
-  title: "Work — Natalia Tomala",
+  title: "Work - Natalia Tomala",
   description: "Case studies and projects by Natalia Tomala, Product Designer.",
 };
 
