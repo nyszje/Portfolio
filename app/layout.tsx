@@ -49,7 +49,7 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
-      <body className="grain bg-ink text-paper min-h-screen flex flex-col">
+      <body className="bg-ink text-paper min-h-screen flex flex-col">
         <a href="#main-content" className="skip-link">Skip to content</a>
         <Nav />
         <main id="main-content" className="flex-1">{children}</main>
