@@ -168,5 +168,5 @@ export const bragbookStats = {
     0,
   ),
   categories: bragbookCategories.length,
-  years: 4,
+  years: "3.5",
 };

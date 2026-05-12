@@ -3,8 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 
 function parse(val: string) {
-  const m = val.match(/^([+−\-]?)(\d+)(%?)$/);
-  return m ? { pre: m[1], num: parseInt(m[2]), suf: m[3] } : null;
+  const m = val.match(/^([+−\-]?)(\d+(?:\.\d+)?)(%?)$/);
+  if (!m) return null;
+  const decimals = m[2].includes(".") ? m[2].split(".")[1].length : 0;
+  return { pre: m[1], num: parseFloat(m[2]), suf: m[3], decimals };
+}
+
+function fmt(n: number, decimals: number) {
+  return decimals > 0 ? n.toFixed(decimals) : Math.round(n).toString();
 }
 
 export default function CounterStat({
@@ -16,7 +22,7 @@ export default function CounterStat({
 }) {
   const parsed = parse(value);
   const [display, setDisplay] = useState(
-    parsed ? `${parsed.pre}0${parsed.suf}` : value
+    parsed ? `${parsed.pre}${fmt(0, parsed.decimals)}${parsed.suf}` : value
   );
   const triggered = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -43,7 +49,7 @@ export default function CounterStat({
         const tick = (now: number) => {
           const p = Math.min((now - t0) / dur, 1);
           const eased = 1 - Math.pow(1 - p, 3);
-          setDisplay(`${parsed.pre}${Math.round(eased * parsed.num)}${parsed.suf}`);
+          setDisplay(`${parsed.pre}${fmt(eased * parsed.num, parsed.decimals)}${parsed.suf}`);
           if (p < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
