@@ -22,7 +22,7 @@ export default function BragbookContent() {
 
       <section
         aria-label="Summary"
-        className="grid grid-cols-3 gap-6 md:gap-12 mb-16 md:mb-24 pb-12 border-b border-paper/10"
+        className="grid grid-cols-3 gap-6 md:gap-12 mb-16 md:mb-24"
       >
         <CounterStat
           value={String(bragbookStats.initiatives)}
