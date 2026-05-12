@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Lock } from "lucide-react";
+import RequestAccess from "./RequestAccess";
 
 export default function CodeGate() {
   const [code, setCode] = useState("");
@@ -95,12 +96,18 @@ export default function CodeGate() {
           </button>
         </form>
 
-        <p className="font-mono text-xs text-smoke/50 text-center mt-8">
-          Don&apos;t have a code?{" "}
-          <a href="/about" className="text-acid hover:underline">
-            Request access
-          </a>
-        </p>
+        <div className="flex items-center gap-4 my-8">
+          <div className="flex-1 h-px bg-paper/10" />
+          <span className="font-mono text-xs text-smoke/50">or</span>
+          <div className="flex-1 h-px bg-paper/10" />
+        </div>
+
+        <div className="flex flex-col items-center gap-3">
+          <p className="font-mono text-xs text-smoke/60 text-center">
+            Don&apos;t have a code?
+          </p>
+          <RequestAccess variant="button" />
+        </div>
       </div>
     </section>
   );

@@ -17,8 +17,18 @@ export default async function BragbookPage() {
         <h1 className="font-display font-extrabold text-display-md text-paper mb-4">
           Bragbook
         </h1>
-        <p className="font-body text-sm text-smoke">
+        <p className="font-body text-sm text-smoke mb-8">
           Bragbook is not configured yet. Please come back soon.
+        </p>
+        <p className="font-mono text-xs text-smoke/60">
+          In the meantime, you can email{" "}
+          <a
+            href="mailto:nat.maz98@gmail.com?subject=Bragbook%20access%20request"
+            className="text-acid hover:underline"
+          >
+            nat.maz98@gmail.com
+          </a>
+          .
         </p>
       </section>
     );

@@ -11,6 +11,20 @@ type Code = {
   logs: AccessLog[];
 };
 
+type AccessRequest = {
+  id: string;
+  ts: number;
+  name: string;
+  company: string;
+  email: string;
+  note?: string;
+  ip: string;
+  ua: string;
+  referer?: string;
+  status: "pending" | "fulfilled" | "declined";
+  fulfilledCode?: string;
+};
+
 function fmt(ts: number) {
   return new Date(ts).toLocaleString("pl-PL", {
     dateStyle: "short",
@@ -20,20 +34,24 @@ function fmt(ts: number) {
 
 export default function AdminPanel({ unconfigured }: { unconfigured: boolean }) {
   const [codes, setCodes] = useState<Code[]>([]);
+  const [requests, setRequests] = useState<AccessRequest[]>([]);
   const [loading, setLoading] = useState(true);
   const [employer, setEmployer] = useState("");
   const [customCode, setCustomCode] = useState("");
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [openLogs, setOpenLogs] = useState<string | null>(null);
+  const [openNote, setOpenNote] = useState<string | null>(null);
+  const [showHandled, setShowHandled] = useState(false);
 
   async function load() {
     setLoading(true);
-    const res = await fetch("/api/admin/bragbook/codes");
-    if (res.ok) {
-      const data = await res.json();
-      setCodes(data.codes || []);
-    }
+    const [codesRes, reqRes] = await Promise.all([
+      fetch("/api/admin/bragbook/codes"),
+      fetch("/api/admin/bragbook/requests"),
+    ]);
+    if (codesRes.ok) setCodes((await codesRes.json()).codes || []);
+    if (reqRes.ok) setRequests((await reqRes.json()).requests || []);
     setLoading(false);
   }
 
@@ -41,6 +59,60 @@ export default function AdminPanel({ unconfigured }: { unconfigured: boolean }) 
     if (!unconfigured) load();
     else setLoading(false);
   }, [unconfigured]);
+
+  async function fulfillRequest(r: AccessRequest) {
+    const employerInput = prompt(
+      "Employer name for the code:",
+      r.company,
+    );
+    if (!employerInput?.trim()) return;
+    const customInput = prompt(
+      "Custom code (leave empty to auto-generate):",
+      "",
+    );
+    const res = await fetch(
+      `/api/admin/bragbook/requests/${encodeURIComponent(r.id)}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "fulfill",
+          employer: employerInput.trim(),
+          code: customInput?.trim() || undefined,
+        }),
+      },
+    );
+    if (res.ok) {
+      const data = await res.json();
+      await load();
+      const link = `${window.location.origin}/bragbook?code=${encodeURIComponent(data.code.code)}`;
+      await navigator.clipboard.writeText(link);
+      alert(
+        `Code "${data.code.code}" created and request marked fulfilled.\nInvite link copied to clipboard:\n${link}`,
+      );
+    } else {
+      const data = await res.json().catch(() => ({}));
+      alert(`Failed: ${data.error || "Unknown error"}`);
+    }
+  }
+
+  async function declineRequest(id: string) {
+    if (!confirm("Mark this request as declined?")) return;
+    await fetch(`/api/admin/bragbook/requests/${encodeURIComponent(id)}`, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "decline" }),
+    });
+    await load();
+  }
+
+  async function removeRequest(id: string) {
+    if (!confirm("Delete this request from history?")) return;
+    await fetch(`/api/admin/bragbook/requests/${encodeURIComponent(id)}`, {
+      method: "DELETE",
+    });
+    await load();
+  }
 
   async function create(e: React.FormEvent) {
     e.preventDefault();
@@ -145,6 +217,128 @@ export default function AdminPanel({ unconfigured }: { unconfigured: boolean }) 
           Sign out
         </button>
       </header>
+
+      {/* Requests section */}
+      <section className="mb-12">
+        <div className="flex items-baseline justify-between mb-4">
+          <h2 className="font-display font-bold text-lg text-paper">
+            Access requests{" "}
+            <span className="font-mono text-xs text-smoke">
+              ({requests.filter((r) => r.status === "pending").length} pending)
+            </span>
+          </h2>
+          {requests.some((r) => r.status !== "pending") && (
+            <button
+              onClick={() => setShowHandled((v) => !v)}
+              className="font-mono text-xs text-smoke hover:text-acid"
+            >
+              {showHandled ? "Hide" : "Show"} handled
+            </button>
+          )}
+        </div>
+
+        {requests.length === 0 ? (
+          <p className="font-mono text-xs text-smoke">No requests yet.</p>
+        ) : (
+          <div className="space-y-2">
+            {requests
+              .filter((r) => showHandled || r.status === "pending")
+              .map((r) => (
+                <div
+                  key={r.id}
+                  className="border border-paper/10 p-4 grid grid-cols-1 md:grid-cols-[2fr_2fr_1.5fr_auto] gap-3 items-start"
+                >
+                  <div>
+                    <p className="font-mono text-sm text-paper">{r.name}</p>
+                    <p className="font-mono text-xs text-smoke">{r.company}</p>
+                    <a
+                      href={`mailto:${r.email}`}
+                      className="font-mono text-xs text-acid hover:underline break-all"
+                    >
+                      {r.email}
+                    </a>
+                  </div>
+                  <div>
+                    <p className="font-mono text-xs text-paper">
+                      {fmt(r.ts)}
+                    </p>
+                    <p className="font-mono text-xs text-smoke">IP: {r.ip}</p>
+                    {r.referer && (
+                      <p
+                        className="font-mono text-xs text-smoke/60 truncate max-w-xs"
+                        title={r.referer}
+                      >
+                        ref: {r.referer}
+                      </p>
+                    )}
+                    {r.note && (
+                      <button
+                        onClick={() =>
+                          setOpenNote(openNote === r.id ? null : r.id)
+                        }
+                        className="font-mono text-xs text-acid hover:underline mt-1"
+                      >
+                        {openNote === r.id ? "hide note" : "show note"}
+                      </button>
+                    )}
+                  </div>
+                  <div>
+                    <span
+                      className={`font-mono text-xs px-2 py-0.5 border inline-block ${
+                        r.status === "pending"
+                          ? "border-acid/40 text-acid"
+                          : r.status === "fulfilled"
+                          ? "border-green-400/40 text-green-400"
+                          : "border-smoke/40 text-smoke"
+                      }`}
+                    >
+                      {r.status}
+                    </span>
+                    {r.fulfilledCode && (
+                      <p className="font-mono text-xs text-smoke mt-1 break-all">
+                        → {r.fulfilledCode}
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex md:flex-col gap-2 items-start md:items-end">
+                    {r.status === "pending" && (
+                      <>
+                        <button
+                          onClick={() => fulfillRequest(r)}
+                          className="font-mono text-xs tracking-wider uppercase border border-acid bg-acid text-ink px-2 py-1 hover:bg-transparent hover:text-acid transition-colors"
+                        >
+                          Mint code
+                        </button>
+                        <button
+                          onClick={() => declineRequest(r.id)}
+                          className="font-mono text-xs text-smoke hover:text-acid"
+                        >
+                          Decline
+                        </button>
+                      </>
+                    )}
+                    <button
+                      onClick={() => removeRequest(r.id)}
+                      className="font-mono text-xs text-smoke hover:text-red-400"
+                    >
+                      Delete
+                    </button>
+                  </div>
+
+                  {openNote === r.id && r.note && (
+                    <div className="md:col-span-4 mt-2 pt-3 border-t border-paper/10">
+                      <p className="font-body text-sm text-paper whitespace-pre-wrap">
+                        {r.note}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ))}
+          </div>
+        )}
+      </section>
+
+      <h2 className="font-display font-bold text-lg text-paper mb-4">Codes</h2>
 
       {/* Create form */}
       <form

@@ -15,6 +15,20 @@ export type AccessLog = {
   ua: string;
 };
 
+export type AccessRequest = {
+  id: string;
+  ts: number;
+  name: string;
+  company: string;
+  email: string;
+  note?: string;
+  ip: string;
+  ua: string;
+  referer?: string;
+  status: "pending" | "fulfilled" | "declined";
+  fulfilledCode?: string;
+};
+
 const SESSION_COOKIE = "bragbook_session";
 const ADMIN_COOKIE = "bragbook_admin";
 const SESSION_DAYS = 30;
@@ -120,6 +134,60 @@ export async function getLogs(code: string): Promise<AccessLog[]> {
   const r = getRedis();
   const raw = (await r.lrange(`logs:${code}`, 0, -1)) as (string | AccessLog)[];
   return raw.map((x) => (typeof x === "string" ? JSON.parse(x) : x));
+}
+
+// ---------- Access requests ----------
+
+export async function createRequest(
+  data: Omit<AccessRequest, "id" | "ts" | "status">,
+): Promise<AccessRequest> {
+  const r = getRedis();
+  const id =
+    Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  const entry: AccessRequest = {
+    id,
+    ts: Date.now(),
+    status: "pending",
+    ...data,
+  };
+  await r.set(`request:${id}`, JSON.stringify(entry));
+  await r.zadd("request:list", { score: entry.ts, member: id });
+  return entry;
+}
+
+export async function listRequests(): Promise<AccessRequest[]> {
+  const r = getRedis();
+  const ids = (await r.zrange("request:list", 0, -1, {
+    rev: true,
+  })) as string[];
+  if (ids.length === 0) return [];
+  const raw = await Promise.all(ids.map((id) => r.get(`request:${id}`)));
+  return raw
+    .filter((x): x is unknown => x !== null && x !== undefined)
+    .map((x) =>
+      typeof x === "string" ? (JSON.parse(x) as AccessRequest) : (x as AccessRequest),
+    );
+}
+
+export async function updateRequestStatus(
+  id: string,
+  status: AccessRequest["status"],
+  fulfilledCode?: string,
+): Promise<void> {
+  const r = getRedis();
+  const raw = await r.get(`request:${id}`);
+  if (!raw) return;
+  const entry =
+    typeof raw === "string" ? (JSON.parse(raw) as AccessRequest) : (raw as AccessRequest);
+  entry.status = status;
+  if (fulfilledCode) entry.fulfilledCode = fulfilledCode;
+  await r.set(`request:${id}`, JSON.stringify(entry));
+}
+
+export async function deleteRequest(id: string): Promise<void> {
+  const r = getRedis();
+  await r.del(`request:${id}`);
+  await r.zrem("request:list", id);
 }
 
 // ---------- Bragbook session (per-recipient) ----------
