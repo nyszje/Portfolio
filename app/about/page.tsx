@@ -36,7 +36,7 @@ export default function AboutPage() {
   return (
     <div className="px-6 md:px-10 pt-48 pb-24">
       {/* Header */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-paper/20 pb-16 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
         <div className="flex flex-col gap-6">
           <h1 className="font-display font-extrabold text-display-lg text-paper leading-none">
             About
@@ -60,8 +60,10 @@ export default function AboutPage() {
             systems thinking, and measured by real outcomes.
           </p>
           <p className="font-body text-base text-smoke leading-relaxed">
-            I care about closing the gap between design and engineering -
-            through quality handoffs, weekly review sessions, and WCAG-compliant systems
+            <mark className="bg-acid text-ink box-decoration-clone px-1">
+              I care about closing the gap between design and engineering
+            </mark>{" "}
+            - through quality handoffs, weekly review sessions, and WCAG-compliant systems
             that developers can actually build from.
           </p>
           <div className="flex gap-4 pt-2">
@@ -99,7 +101,7 @@ export default function AboutPage() {
           {timeline.map((item, i) => (
             <div
               key={i}
-              className="grid grid-cols-12 gap-4 py-8 border-t border-paper/10 hover:border-paper/30 transition-colors duration-300 group"
+              className="grid grid-cols-12 gap-4 py-8 border-t border-paper/10 group"
             >
               <div className="col-span-3 md:col-span-2">
                 <span className="font-mono text-xs text-smoke tracking-wider">

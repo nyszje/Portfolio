@@ -11,7 +11,7 @@ export default function ProjectCard({
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group block border-t border-paper/20 py-10 hover:border-acid transition-colors duration-300"
+      className="group block border-t border-paper/20 py-10"
     >
       <div className="grid grid-cols-12 gap-4 items-start">
         {/* Index */}

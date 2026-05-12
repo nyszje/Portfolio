@@ -44,8 +44,15 @@ export default function Nav() {
         <Link
           href="/"
           aria-label="Natalia Tomala - home"
-          className="font-display font-bold text-sm tracking-widest uppercase text-paper hover:text-acid transition-colors duration-200"
+          className="font-display font-bold text-sm tracking-widest uppercase text-paper hover:text-acid transition-colors duration-200 flex items-center gap-2"
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/natalia.png"
+            alt=""
+            aria-hidden="true"
+            className="w-7 h-7 rounded-full object-cover"
+          />
           NT
         </Link>
 

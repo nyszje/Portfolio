@@ -15,7 +15,7 @@ export default function BragbookContent() {
           proud of.
         </h1>
         <p className="font-body text-base md:text-lg text-smoke max-w-xl leading-relaxed">
-          Initiatives, decisions, and shipped work that shaped my last four
+          Initiatives, decisions, and shipped work that shaped my last 3.5
           years. Tap a category to dig in.
         </p>
       </header>
