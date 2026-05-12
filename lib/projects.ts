@@ -56,7 +56,7 @@ export const projects: Project[] = [
     nda: false,
     wip: false,
     coverImage: "/cover-twocontinents-website.png",
-    heroCover: "/hero-twocontinents-website.png",
+    heroCover: "/cover_TWC.png",
     vimeoId: "1175917145",
     images: {
       designSystem: "/tc-design-system.png",
