@@ -7,7 +7,7 @@ const enTranslations = {
     banner: {
       openToRoles: "Open to new roles",
       fulltime: "Full-time",
-      productDesign: "Product Design · Product Engineering",
+      productDesign: "Product Design",
       location: "Warsaw · Remote / Hybrid",
     },
     nav: {
@@ -67,7 +67,7 @@ const enTranslations = {
         },
       ],
       letsWork: "Let's work together.",
-      letsWorkSub: "Open to Senior Product Design and Product Engineer roles.",
+      letsWorkSub: "Open to Senior Product Design roles.",
       getInTouch: "Get in touch →",
     },
     work: {
@@ -101,14 +101,14 @@ const enTranslations = {
       bio3Highlight:
         "I care about closing the gap between design and engineering",
       bio3Rest:
-        " - through quality handoffs, weekly review sessions, and WCAG-compliant systems that developers can actually build from.",
+        " - through quality handoffs, weekly review sessions, and WCAG-compliant systems that developers can actually build from. I'm actively growing into Product Engineering - learning Next.js and TypeScript on the side. This portfolio is the first shipped result.",
       linkedin: "LinkedIn ↗",
       email: "Email ↗",
       cv: "CV ↓",
       experienceLabel: "Experience & Education",
       certificationsLabel: "Certifications",
       letsWork: "Let's work together.",
-      letsWorkSub: "Open to Senior Product Design and Product Engineer roles.",
+      letsWorkSub: "Open to Senior Product Design roles.",
       getInTouch: "Get in touch →",
       timelineNotes: [
         "TwoContinents platform - website redesign (+30% conversion), internal dashboard, design system (50+ components), research strategy.",
@@ -148,7 +148,7 @@ const plTranslations: Translations = {
     banner: {
       openToRoles: "Otwarta na nowe role",
       fulltime: "Pełen etat",
-      productDesign: "Product Design · Product Engineering",
+      productDesign: "Product Design",
       location: "Warszawa · Zdalnie / Hybrydowo",
     },
     nav: {
@@ -208,8 +208,7 @@ const plTranslations: Translations = {
         },
       ],
       letsWork: "Zróbmy coś razem.",
-      letsWorkSub:
-        "Otwarta na role Senior Product Designer i Product Engineer.",
+      letsWorkSub: "Otwarta na role Senior Product Designer.",
       getInTouch: "Napisz do mnie →",
     },
     work: {
@@ -243,15 +242,14 @@ const plTranslations: Translations = {
       bio3Highlight:
         "Zależy mi na zamknięciu luki między designem a engineeringiem",
       bio3Rest:
-        " - przez jakościowe handoffy, cotygodniowe sesje review i systemy zgodne z WCAG, z których developerzy faktycznie mogą budować.",
+        " - przez jakościowe handoffy, cotygodniowe sesje review i systemy zgodne z WCAG, z których developerzy faktycznie mogą budować. Aktualnie kształtuję się w kierunku Product Engineeringu - uczę się Next.js i TypeScripta po godzinach. To portfolio jest pierwszym wdrożonym efektem.",
       linkedin: "LinkedIn ↗",
       email: "Email ↗",
       cv: "CV ↓",
       experienceLabel: "Doświadczenie i edukacja",
       certificationsLabel: "Certyfikaty",
       letsWork: "Zróbmy coś razem.",
-      letsWorkSub:
-        "Otwarta na role Senior Product Designer i Product Engineer.",
+      letsWorkSub: "Otwarta na role Senior Product Designer.",
       getInTouch: "Napisz do mnie →",
       timelineNotes: [
         "Platforma TwoContinents - redesign strony (+30% konwersji), wewnętrzny dashboard, design system (50+ komponentów), strategia researchu.",
