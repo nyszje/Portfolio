@@ -2,7 +2,7 @@ export default function BragbookContent() {
   return (
     <article className="px-6 md:px-10 pt-48 pb-24 max-w-3xl mx-auto">
       <header className="mb-16">
-        <h1 className="font-display font-extrabold text-display-lg text-paper leading-none mb-6">
+        <h1 className="font-display font-extrabold text-display-md text-paper leading-none mb-6 whitespace-nowrap">
           Bragbook
         </h1>
         <p className="font-body text-base text-smoke max-w-xl leading-relaxed">
