@@ -92,7 +92,7 @@ export const projects: Project[] = [
     nda: true,
     wip: false,
     coverImage: "/cover-twocontinents-dashboard.png",
-    heroCover: "/hero-twocontinents-dashboard.png",
+    heroCover: "/cover_dashboard.png",
   },
   {
     slug: "gog-newsletter-system",
