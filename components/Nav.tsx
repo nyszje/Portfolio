@@ -3,16 +3,24 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import type { Locale, Translations } from "@/lib/i18n";
+import LangSwitcher from "./LangSwitcher";
 
-const links = [
-  { href: "/work", label: "Work" },
-  { href: "/bragbook", label: "Bragbook" },
-  { href: "/about", label: "About" },
-  { href: "/CV_Tomala_Natalia.pdf", label: "CV ↓", external: true },
-];
-
-export default function Nav() {
+export default function Nav({
+  locale,
+  t,
+}: {
+  locale: Locale;
+  t: Translations;
+}) {
   const pathname = usePathname();
+
+  const links = [
+    { href: "/work", label: t.nav.work },
+    { href: "/bragbook", label: t.nav.bragbook },
+    { href: "/about", label: t.nav.about },
+    { href: "/CV_Tomala_Natalia.pdf", label: t.nav.cv, external: true },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-[10000] flex flex-col bg-ink">
@@ -23,20 +31,22 @@ export default function Nav() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-400" />
           </span>
-          Open to new roles
+          {t.banner.openToRoles}
         </span>
         <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
         <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
-          Full-time
+          {t.banner.fulltime}
         </span>
         <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
         <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
-          Product Design · Product Engineering
+          {t.banner.productDesign}
         </span>
         <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
         <span className="font-mono text-xs tracking-widest uppercase text-paper font-medium">
-          Warsaw · Remote / Hybrid
+          {t.banner.location}
         </span>
+        <span className="font-mono text-xs text-paper/30 hidden sm:inline">·</span>
+        <LangSwitcher current={locale} />
       </div>
 
       {/* Nav links */}

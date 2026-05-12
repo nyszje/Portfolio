@@ -7,9 +7,13 @@ import type { BragbookCategory as Category } from "@/lib/bragbook-data";
 export default function BragbookCategory({
   category,
   index,
+  itemsLabel = "items",
+  itemLabel = "item",
 }: {
   category: Category;
   index: number;
+  itemsLabel?: string;
+  itemLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -38,7 +42,7 @@ export default function BragbookCategory({
         <div className="flex items-center gap-3 shrink-0 pt-2">
           <span className="font-mono text-xs text-smoke hidden sm:inline">
             {category.items.length}{" "}
-            {category.items.length === 1 ? "item" : "items"}
+            {category.items.length === 1 ? itemLabel : itemsLabel}
           </span>
           <span
             className="w-8 h-8 rounded-full border border-paper/30 flex items-center justify-center group-hover:border-acid transition-colors"

@@ -4,9 +4,11 @@ import type { Project } from "@/lib/projects";
 export default function ProjectCard({
   project,
   index,
+  inProgressLabel = "In Progress",
 }: {
   project: Project;
   index: number;
+  inProgressLabel?: string;
 }) {
   return (
     <Link
@@ -50,7 +52,7 @@ export default function ProjectCard({
             )}
             {project.wip && (
               <span className="font-mono text-xs px-2 py-1 border border-acid/30 text-acid/60">
-                In Progress
+                {inProgressLabel}
               </span>
             )}
           </div>

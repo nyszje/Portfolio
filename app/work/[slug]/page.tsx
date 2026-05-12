@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getProject, projects } from "@/lib/projects";
+import { getProject, getProjects, getAllSlugs } from "@/lib/projects";
 import CounterStat from "@/components/CounterStat";
 import ScrollReveal from "@/components/ScrollReveal";
+import { getLocale } from "@/lib/locale";
+import { t as tr, DEFAULT_LOCALE } from "@/lib/i18n";
 
 export async function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getAllSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -14,7 +16,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = getProject(slug);
+  const project = getProject(slug, DEFAULT_LOCALE);
   if (!project) return {};
   return {
     title: `${project.title.replace("\n", " ")} - Natalia Tomala`,
@@ -28,8 +30,12 @@ export default async function CaseStudyPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = getProject(slug);
+  const locale = await getLocale();
+  const t = tr(locale);
+  const project = getProject(slug, locale);
   if (!project) notFound();
+
+  const projects = getProjects(locale);
 
   return (
     <article className="px-6 md:px-10 pt-44 pb-24">
@@ -38,7 +44,7 @@ export default async function CaseStudyPage({
         href="/work"
         className="font-mono text-xs tracking-widest uppercase text-smoke hover:text-acid transition-colors mb-16 inline-block"
       >
-        ← All Work
+        {t.project.backToWork}
       </Link>
 
       {/* Hero */}
@@ -88,7 +94,7 @@ export default async function CaseStudyPage({
         {/* Summary */}
         <ScrollReveal className="md:col-span-4">
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
-            Overview
+            {t.project.overview}
           </span>
           <p className="font-body text-base text-paper/80 leading-relaxed">
             {project.summary}
@@ -98,7 +104,7 @@ export default async function CaseStudyPage({
         {/* Problem */}
         <ScrollReveal className="md:col-span-8" delay={100}>
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
-            The Problem
+            {t.project.problem}
           </span>
           <p className="font-body text-base text-paper/80 leading-relaxed">
             {project.problem}
@@ -108,7 +114,7 @@ export default async function CaseStudyPage({
         {/* Process */}
         <div className="md:col-span-12">
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-8">
-            Process
+            {t.project.process}
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {project.process.map((step, i) => (
@@ -133,10 +139,9 @@ export default async function CaseStudyPage({
             <div className="border border-paper/10 bg-paper/[0.03] px-8 py-6 flex gap-4 items-start">
               <span className="text-smoke/40 text-lg mt-0.5 shrink-0">⊘</span>
               <div>
-                <p className="font-mono text-xs tracking-widest uppercase text-smoke mb-1">NDA</p>
+                <p className="font-mono text-xs tracking-widest uppercase text-smoke mb-1">{t.project.ndaLabel}</p>
                 <p className="font-body text-sm text-smoke leading-relaxed">
-                  Wireframes, sketches, and UI designs for this project are covered by a non-disclosure agreement
-                  and cannot be shared publicly. Happy to walk through the work in detail during a conversation.
+                  {t.project.ndaText}
                 </p>
               </div>
             </div>
@@ -147,7 +152,7 @@ export default async function CaseStudyPage({
         {project.vimeoId && (
           <div className="md:col-span-12">
             <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
-              Live Preview
+              {t.project.livePreview}
             </span>
             <div style={{ padding: "64.99% 0 0 0", position: "relative" }}>
               <iframe
@@ -168,7 +173,7 @@ export default async function CaseStudyPage({
             {project.images.sketches && project.images.sketches.length > 0 && (
               <div>
                 <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
-                  Lo-fi Sketches
+                  {t.project.sketches}
                 </span>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {project.images.sketches.map((src, i) => (
@@ -187,7 +192,7 @@ export default async function CaseStudyPage({
             {project.images.designSystem && (
               <div>
                 <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
-                  Design System
+                  {t.project.designSystem}
                 </span>
                 <img
                   src={project.images.designSystem}
@@ -201,7 +206,7 @@ export default async function CaseStudyPage({
             {(project.images.desktop || project.images.mobile) && (
               <div>
                 <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-6">
-                  Designs
+                  {t.project.designs}
                 </span>
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   {/* Laptop mockup */}
@@ -219,7 +224,7 @@ export default async function CaseStudyPage({
                           className="w-full rounded-sm"
                         />
                       </div>
-                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">Desktop</p>
+                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">{t.project.desktop}</p>
                     </div>
                   )}
 
@@ -234,7 +239,7 @@ export default async function CaseStudyPage({
                           className="w-full rounded-xl"
                         />
                       </div>
-                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">Mobile</p>
+                      <p className="font-mono text-xs text-smoke/50 text-center mt-3 tracking-wider">{t.project.mobile}</p>
                     </div>
                   )}
                 </div>
@@ -245,7 +250,7 @@ export default async function CaseStudyPage({
 
         <div className="md:col-span-8">
           <span className="font-mono text-xs tracking-widest uppercase text-acid block mb-4">
-            Outcome
+            {t.project.outcome}
           </span>
           <p className="font-body text-lg text-paper leading-relaxed font-display">
             {project.outcome}
@@ -256,7 +261,7 @@ export default async function CaseStudyPage({
       {/* Next project */}
       <div className="mt-24 pt-12 border-t border-paper/20">
         <span className="font-mono text-xs tracking-widest uppercase text-smoke block mb-6">
-          Next Project
+          {t.project.nextProject}
         </span>
         {(() => {
           const currentIndex = projects.findIndex((p) => p.slug === slug);

@@ -5,6 +5,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { getLocale } from "@/lib/locale";
+import { t as tr } from "@/lib/i18n";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -39,21 +41,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const t = tr(locale);
+
   return (
     <html
-      lang="en"
+      lang={locale}
       className={`${syne.variable} ${dmSans.variable} ${dmMono.variable}`}
     >
       <body className="bg-ink text-paper min-h-screen flex flex-col">
         <a href="#main-content" className="skip-link">Skip to content</a>
-        <Nav />
+        <Nav locale={locale} t={t} />
         <main id="main-content" className="flex-1">{children}</main>
-        <Footer />
+        <Footer t={t} />
         <Analytics />
         <SpeedInsights />
       </body>
