@@ -44,7 +44,7 @@ export default function BragbookContent() {
         ))}
       </section>
 
-      <footer className="mt-20 pt-8 border-t border-paper/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <footer className="mt-20 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <p className="font-body text-sm text-smoke max-w-md">
           Want to talk about any of these?{" "}
           <a

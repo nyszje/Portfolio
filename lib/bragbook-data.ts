@@ -25,12 +25,6 @@ export const bragbookCategories: BragbookCategory[] = [
           "50+ components, atomic methodology - single source of truth for design and development.",
       },
       {
-        title: "Created Case Study for TWC",
-        year: "2025",
-        description:
-          "Internal artefact summarising research, decisions, and impact of the website redesign.",
-      },
-      {
         title: "Added Ideas Hub to TWC board",
         year: "2025",
         description:
