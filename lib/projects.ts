@@ -68,7 +68,7 @@ export const projects: Project[] = [
     subtitle: "Replacing a 30-minute manual process with a 3-minute automated flow - through discovery research and MVP design.",
     company: "CodeYourBrand",
     year: "2025-04/2026",
-    tags: ["Dashboard", "Product Discovery", "Automation", "shadcn/ui"],
+    tags: ["B2B", "Dashboard", "Product Discovery", "Automation"],
     impact: [
       { label: "Task time reduction", value: "30→3 min" },
       { label: "Users interviewed", value: "7" },
