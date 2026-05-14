@@ -71,7 +71,7 @@ export default async function BragbookContent() {
           .
         </p>
         <a
-          href="/CV_Tomala_Natalia.pdf"
+          href={locale === "pl" ? "/CV_Tomala_Natalia_PL.pdf" : "/CV_Tomala_Natalia_EN.pdf"}
           download
           className="font-mono text-xs tracking-widest uppercase border border-acid text-acid px-4 py-2 hover:bg-acid hover:text-ink transition-colors"
         >

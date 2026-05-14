@@ -19,7 +19,7 @@ export default function Nav({
     { href: "/work", label: t.nav.work },
     { href: "/bragbook", label: t.nav.bragbook },
     { href: "/about", label: t.nav.about },
-    { href: "/CV_Tomala_Natalia.pdf", label: t.nav.cv, external: true },
+    { href: locale === "pl" ? "/CV_Tomala_Natalia_PL.pdf" : "/CV_Tomala_Natalia_EN.pdf", label: t.nav.cv, external: true },
   ];
 
   return (

@@ -83,7 +83,7 @@ export default async function AboutPage() {
               {t.about.email}
             </CopyEmailButton>
             <a
-              href="/CV_Tomala_Natalia.pdf"
+              href={locale === "pl" ? "/CV_Tomala_Natalia_PL.pdf" : "/CV_Tomala_Natalia_EN.pdf"}
               download
               className="font-mono text-xs tracking-widest uppercase text-smoke border border-smoke/30 px-4 py-2 hover:border-acid hover:text-acid transition-all duration-200"
             >
