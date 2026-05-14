@@ -123,7 +123,7 @@ const enTranslations = {
     },
     bragbook: {
       kicker: "Bragbook",
-      title: "Things I'm\nproud of.",
+      title: "Things I'm\nproud of",
       intro:
         "Initiatives, decisions, and shipped work that shaped my last 3.5 years. Tap a category to dig in.",
       initiativesLabel: "Initiatives shipped",
@@ -266,7 +266,7 @@ const plTranslations: Translations = {
     },
     bragbook: {
       kicker: "Bragbook",
-      title: "Z czego jestem\ndumna.",
+      title: "Z czego jestem\ndumna",
       intro:
         "Inicjatywy, decyzje i wdrożenia, które ukształtowały moje ostatnie 3.5 roku. Kliknij kategorię, żeby zobaczyć szczegóły.",
       initiativesLabel: "Wdrożonych inicjatyw",
