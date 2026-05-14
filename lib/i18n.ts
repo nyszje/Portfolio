@@ -66,6 +66,11 @@ const enTranslations = {
           ],
         },
       ],
+      bragbookKicker: "BRAGBOOK",
+      bragbookHeading: "Things I'm proud of",
+      bragbookIntro:
+        "Initiatives, decisions, and shipped work — a quick glimpse. The full picture (17 initiatives across 6 areas) lives in the Bragbook.",
+      bragbookViewAll: "Open the full Bragbook →",
       letsWork: "Let's work together.",
       letsWorkSub: "Open to Senior Product Design roles.",
       getInTouch: "Get in touch →",
@@ -209,6 +214,11 @@ const plTranslations: Translations = {
           ],
         },
       ],
+      bragbookKicker: "BRAGBOOK",
+      bragbookHeading: "Z czego jestem dumna",
+      bragbookIntro:
+        "Inicjatywy, decyzje i wdrożenia — krótkie spojrzenie. Pełna historia (17 inicjatyw w 6 obszarach) jest w Bragbooku.",
+      bragbookViewAll: "Otwórz cały Bragbook →",
       letsWork: "Zróbmy coś razem.",
       letsWorkSub: "Otwarta na role Senior Product Designer.",
       getInTouch: "Napisz do mnie →",

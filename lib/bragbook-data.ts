@@ -6,6 +6,7 @@ export type LocalizedBragbookItem = {
   title: T;
   year: string;
   description?: T;
+  homepageFeatured?: boolean;
 };
 
 export type LocalizedBragbookCategory = {
@@ -19,6 +20,7 @@ export type BragbookItem = {
   title: string;
   year: string;
   description?: string;
+  categoryTitle?: string;
 };
 
 export type BragbookCategory = {
@@ -46,6 +48,7 @@ const localizedCategories: LocalizedBragbookCategory[] = [
           pl: "Zbudowanie Design Systemu od zera dla TWC",
         },
         year: "2024",
+        homepageFeatured: true,
         description: {
           en: "50+ components, atomic methodology - single source of truth for design and development.",
           pl: "50+ komponentów, metodologia atomic design - jedno źródło prawdy dla designu i developmentu.",
@@ -68,6 +71,7 @@ const localizedCategories: LocalizedBragbookCategory[] = [
           pl: "Projekt Dashboardu dla TWC",
         },
         year: "2025-2026",
+        homepageFeatured: true,
         description: {
           en: "Discovery research + MVP design that cut a 30-minute manual flow down to 3 minutes.",
           pl: "Discovery research i design MVP, które skróciły 30-minutowy ręczny proces do 3 minut.",
@@ -103,6 +107,7 @@ const localizedCategories: LocalizedBragbookCategory[] = [
           pl: "Prowadzenie review UX/UI",
         },
         year: "2024-2026",
+        homepageFeatured: true,
         description: {
           en: "Monthly QA on shipped work - caught 40% more issues before they hit production.",
           pl: "Miesięczne QA wdrażanych prac - wyłapywanie o 40% więcej błędów zanim trafią na produkcję.",
@@ -160,6 +165,7 @@ const localizedCategories: LocalizedBragbookCategory[] = [
           pl: "Wprowadzenie metryk produktowych",
         },
         year: "2025-2026",
+        homepageFeatured: true,
         description: {
           en: "Posthog + Hotjar + Maze. Turned guesswork into evidence-backed design decisions.",
           pl: "Posthog + Hotjar + Maze. Zamiana zgadywania na decyzje projektowe oparte na danych.",
@@ -314,6 +320,23 @@ function resolveCategory(
 
 export function getBragbookCategories(locale: Locale): BragbookCategory[] {
   return localizedCategories.map((c) => resolveCategory(c, locale));
+}
+
+export function getHomepageFeaturedBragbookItems(locale: Locale): BragbookItem[] {
+  const out: BragbookItem[] = [];
+  for (const c of localizedCategories) {
+    for (const i of c.items) {
+      if (i.homepageFeatured) {
+        out.push({
+          title: i.title[locale],
+          year: i.year,
+          description: i.description?.[locale],
+          categoryTitle: c.title[locale],
+        });
+      }
+    }
+  }
+  return out;
 }
 
 export function getBragbookStats() {

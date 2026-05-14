@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getProjects } from "@/lib/projects";
+import { getHomepageFeaturedBragbookItems } from "@/lib/bragbook-data";
 import ScrollReveal from "@/components/ScrollReveal";
 import HomeProjectsGrid from "@/components/HomeProjectsGrid";
 import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
@@ -11,6 +12,7 @@ export default async function Home() {
   const locale = await getLocale();
   const t = tr(locale);
   const projects = getProjects(locale);
+  const featuredBragbook = getHomepageFeaturedBragbookItems(locale);
 
   return (
     <>
@@ -100,6 +102,62 @@ export default async function Home() {
                 </ul>
               </div>
             ))}
+          </div>
+        </ScrollReveal>
+      </section>
+
+      {/* ── BRAGBOOK TEASER ──────────────────────────────────────────────── */}
+      <section
+        className="px-6 md:px-10 py-20 border-t border-paper/10"
+        aria-labelledby="bragbook-teaser-heading"
+      >
+        <ScrollReveal>
+          <div className="max-w-5xl mx-auto">
+            <p className="font-mono text-xs tracking-widest uppercase text-acid mb-4">
+              {t.home.bragbookKicker}
+            </p>
+            <h2
+              id="bragbook-teaser-heading"
+              className="font-display font-extrabold text-display-md text-paper leading-tight mb-4"
+            >
+              {t.home.bragbookHeading}
+            </h2>
+            <p className="font-body text-base text-smoke leading-relaxed max-w-2xl mb-10">
+              {t.home.bragbookIntro}
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-paper/10 mb-8">
+              {featuredBragbook.map((item) => (
+                <div
+                  key={item.title}
+                  className="bg-ink p-6 md:p-8 flex flex-col gap-2"
+                >
+                  <div className="flex items-center justify-between gap-3 mb-1">
+                    <span className="font-mono text-[10px] tracking-widest uppercase text-acid">
+                      {item.categoryTitle}
+                    </span>
+                    <span className="font-mono text-[10px] tracking-wider text-smoke">
+                      {item.year}
+                    </span>
+                  </div>
+                  <h3 className="font-display font-bold text-lg md:text-xl text-paper leading-snug">
+                    {item.title}
+                  </h3>
+                  {item.description && (
+                    <p className="font-body text-sm text-smoke leading-relaxed">
+                      {item.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/bragbook"
+              className="inline-flex items-center gap-2 font-mono text-xs tracking-widest uppercase text-acid border border-acid px-4 py-2 hover:bg-acid hover:text-ink transition-all duration-200"
+            >
+              {t.home.bragbookViewAll}
+            </Link>
           </div>
         </ScrollReveal>
       </section>
