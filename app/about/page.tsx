@@ -1,4 +1,5 @@
 import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
+import CopyEmailButton from "@/components/CopyEmailButton";
 import { getLocale } from "@/lib/locale";
 import { t as tr } from "@/lib/i18n";
 
@@ -76,12 +77,11 @@ export default async function AboutPage() {
             >
               {t.about.linkedin}
             </a>
-            <a
-              href="mailto:nat.maz98@gmail.com"
+            <CopyEmailButton
               className="font-mono text-xs tracking-widest uppercase text-smoke border border-smoke/30 px-4 py-2 hover:border-acid hover:text-acid transition-all duration-200"
             >
               {t.about.email}
-            </a>
+            </CopyEmailButton>
             <a
               href="/CV_Tomala_Natalia.pdf"
               download
@@ -153,12 +153,11 @@ export default async function AboutPage() {
             {t.about.letsWorkSub}
           </p>
         </div>
-        <a
-          href="mailto:nat.maz98@gmail.com"
+        <CopyEmailButton
           className="font-mono text-xs tracking-widest uppercase text-ink bg-acid px-6 py-3 hover:bg-paper transition-colors duration-200 shrink-0"
         >
           {t.about.getInTouch}
-        </a>
+        </CopyEmailButton>
       </div>
     </div>
   );

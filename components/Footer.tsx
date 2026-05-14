@@ -1,4 +1,5 @@
 import type { Translations } from "@/lib/i18n";
+import CopyEmailButton from "@/components/CopyEmailButton";
 
 export default function Footer({ t }: { t: Translations }) {
   return (
@@ -17,12 +18,11 @@ export default function Footer({ t }: { t: Translations }) {
           >
             {t.footer.linkedin}
           </a>
-          <a
-            href="mailto:nat.maz98@gmail.com"
+          <CopyEmailButton
             className="font-mono text-xs tracking-wider uppercase text-smoke hover:text-acid transition-colors duration-200"
           >
             {t.footer.email}
-          </a>
+          </CopyEmailButton>
         </div>
       </div>
     </footer>

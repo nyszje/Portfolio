@@ -160,7 +160,7 @@ const plTranslations: Translations = {
       cv: "CV ↓",
     },
     home: {
-      chips: ["Product Designer", "Facylitatorka", "Myślicielka systemowa"],
+      chips: ["Product Designer", "Facylitatorka", "System thinker"],
       heroLine1: "Cześć, jestem",
       heroName: "Natalia.",
       heroDescription:
@@ -216,7 +216,7 @@ const plTranslations: Translations = {
     work: {
       title: "Projekty",
       description:
-        "Wybrane case studies. Każdy projekt zaczyna się od realnego problemu, przechodzi przez research i myślenie systemowe, a kończy się mierzalnym rezultatem.",
+        "Wybrane case studies. Każdy projekt zaczyna się od realnego problemu, przechodzi przez fazy researchu i myślenie systemowe, a kończy się mierzalnym rezultatem.",
     },
     project: {
       backToWork: "← Wszystkie projekty",
@@ -240,7 +240,7 @@ const plTranslations: Translations = {
       title: "O mnie",
       bio1: "Product Designer. Facylitatorka. Mentorka. Ponad 3 lata doświadczenia.",
       bio2:
-        "Projektuję funkcje o dużym wpływie - takie, które zamieniają potrzeby użytkowników we wzrost biznesu. Moja praca obejmuje produkty 0→1, dojrzałe platformy, gaming (GOG.com) i e-commerce turystyczny - zawsze oparta na researchu, zbudowana z myślą systemową i mierzona realnymi wynikami.",
+        "Projektuję funkcje o dużym wpływie - takie, które zamieniają potrzeby użytkowników we wzrost biznesu. Moja praca obejmuje produkty 0→1, dojrzałe platformy, gaming (GOG.com) i e-commerce turystyczny - zawsze oparta na researchu, zbudowane z myślą systemowym, mierzona realnymi wynikami.",
       bio3Highlight:
         "Zależy mi na zamknięciu luki między designem a engineeringiem",
       bio3Rest:

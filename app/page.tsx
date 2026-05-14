@@ -3,6 +3,7 @@ import { getProjects } from "@/lib/projects";
 import ScrollReveal from "@/components/ScrollReveal";
 import HomeProjectsGrid from "@/components/HomeProjectsGrid";
 import PhotoWithVideoHover from "@/components/PhotoWithVideoHover";
+import CopyEmailButton from "@/components/CopyEmailButton";
 import { getLocale } from "@/lib/locale";
 import { t as tr } from "@/lib/i18n";
 
@@ -114,12 +115,11 @@ export default async function Home() {
               {t.home.letsWorkSub}
             </p>
           </div>
-          <a
-            href="mailto:nat.maz98@gmail.com"
+          <CopyEmailButton
             className="font-mono text-xs tracking-widest uppercase text-ink bg-acid px-6 py-3 hover:bg-paper transition-colors duration-200 shrink-0"
           >
             {t.home.getInTouch}
-          </a>
+          </CopyEmailButton>
         </div>
       </section>
     </>

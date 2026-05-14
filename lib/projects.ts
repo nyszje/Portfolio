@@ -63,7 +63,7 @@ const localizedProjects: LocalizedProject[] = [
     slug: "twocontinents-website",
     title: {
       en: "TwoContinents\nWebsite",
-      pl: "TwoContinents\nWebsite",
+      pl: "TwoContinents\nProjekt strony",
     },
     subtitle: {
       en: "Full redesign of a Dubai travel e-commerce platform - design system from scratch, +20% conversion (goal was +10%).",
@@ -119,8 +119,8 @@ const localizedProjects: LocalizedProject[] = [
       ],
     },
     outcome: {
-      en: "Conversion rates increased by 20% - double the original goal of +10% - driven by the refreshed checkout flow and improved UX. Developer errors reduced by 40% through systematic QA reviews. The design system is now a living foundation that grows with the product. The project is still in progress, with upcoming focus on advanced checkout flows, search/filtering, and further usability testing.",
-      pl: "Konwersja wzrosła o 20% - dwa razy więcej niż pierwotny cel +10% - dzięki odświeżonemu flow checkoutu i lepszemu UX. Błędy developerskie spadły o 40% dzięki systematycznym QA review. Design system jest teraz żywym fundamentem, który rośnie razem z produktem. Projekt jest nadal w toku, kolejne kroki to zaawansowane flow checkoutu, wyszukiwanie/filtry i dalsze testy użyteczności.",
+      en: "Conversion rates increased by 20% - double the original goal of +10% - driven by the refreshed checkout flow and improved UX. Developer errors reduced by 40% through systematic QA reviews. The design system is now a living foundation that grows with the product. The next steps I took after refreshing the site were advanced checkout flows, search/filtering, and further usability testing.",
+      pl: "Konwersja wzrosła o 20% - dwa razy więcej niż pierwotny cel +10% - dzięki odświeżonemu flow checkoutu i lepszemu UX. Błędy developerskie spadły o 40% dzięki systematycznym QA review. Design system jest teraz żywym fundamentem, który rośnie razem z produktem. Kolejne kroki jakie podjęłam po odświeżeniu strony, to zaawansowane flow checkoutu, wyszukiwanie/filtry i dalsze testy użyteczności.",
     },
     role: {
       en: "Lead Product Designer (sole designer) - WCAG audit, research strategy, design system, roadmap, developer collaboration, team hiring.",
