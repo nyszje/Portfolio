@@ -127,7 +127,9 @@ const enTranslations = {
       intro:
         "Initiatives, decisions, and shipped work that shaped my last 3.5 years. Tap a category to dig in.",
       initiativesLabel: "Initiatives shipped",
+      initiativesSubLabel: "(Product strategy, Frameworks, Boosting UX awareness in-house)",
       areasLabel: "Areas of impact",
+      areasSubLabel: "(Research, Design, Hand-off and more)",
       yearsLabel: "Years",
       footerLine: "Want to talk about any of these?",
       footerLink: "Get in touch",
@@ -268,7 +270,9 @@ const plTranslations: Translations = {
       intro:
         "Inicjatywy, decyzje i wdrożenia, które ukształtowały moje ostatnie 3.5 roku. Kliknij kategorię, żeby zobaczyć szczegóły.",
       initiativesLabel: "Wdrożonych inicjatyw",
+      initiativesSubLabel: "(Strategia produktowa, Frameworki, Zwiększenie UX świadomości wewnątrz firmy)",
       areasLabel: "Obszary wpływu",
+      areasSubLabel: "(Research, Design, Hand-off i więcej)",
       yearsLabel: "Lat",
       footerLine: "Chcesz pogadać o którymś z tych?",
       footerLink: "Napisz do mnie",

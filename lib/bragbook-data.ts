@@ -53,8 +53,8 @@ const localizedCategories: LocalizedBragbookCategory[] = [
       },
       {
         title: {
-          en: "Added Ideas Hub to TWC board",
-          pl: "Stworzenie Ideas Hubu na boardzie TWC",
+          en: "Created Ideas Hub",
+          pl: "Stworzenie Ideas Hub",
         },
         year: "2025",
         description: {
@@ -110,8 +110,8 @@ const localizedCategories: LocalizedBragbookCategory[] = [
       },
       {
         title: {
-          en: "Onboarded Marta into Webflow / courses platform",
-          pl: "Wdrożenie Marty do projektu Webflow / platforma kursów",
+          en: "Onboarded junior UX/UI Designer into Webflow / courses platform",
+          pl: "Wdrożenie junior UX/UI Designerki do projektu Webflow / platforma kursów",
         },
         year: "2025",
         description: {
@@ -283,8 +283,8 @@ const localizedCategories: LocalizedBragbookCategory[] = [
       },
       {
         title: {
-          en: "Vibe-coding (SELF IMPROVEMENT)",
-          pl: "Vibe-coding (SAMOROZWÓJ)",
+          en: "Vibe-coding",
+          pl: "Vibe-coding",
         },
         year: "2026",
         description: {

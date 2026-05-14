@@ -15,7 +15,7 @@ export default function ProjectCard({
       href={`/work/${project.slug}`}
       className="group block border-t border-paper/20 py-10"
     >
-      <div className="grid grid-cols-12 gap-4 items-start">
+      <div className="grid grid-cols-12 gap-4 md:gap-6 items-start">
         {/* Index */}
         <div className="col-span-1 hidden md:block">
           <span className="font-mono text-xs text-smoke">
@@ -24,14 +24,14 @@ export default function ProjectCard({
         </div>
 
         {/* Title block */}
-        <div className="col-span-12 md:col-span-6">
+        <div className="col-span-12 md:col-span-4">
           <h2 className="font-display font-800 text-display-md text-paper group-hover:text-acid transition-colors duration-300 whitespace-pre-line">
             {project.title}
           </h2>
         </div>
 
         {/* Meta */}
-        <div className="col-span-12 md:col-span-5 md:pt-2 flex flex-col gap-4">
+        <div className="col-span-12 md:col-span-3 md:pt-2 flex flex-col gap-4">
           <p className="font-body text-sm text-smoke leading-relaxed max-w-xs">
             {project.subtitle}
           </p>
@@ -63,18 +63,20 @@ export default function ProjectCard({
             <span className="font-mono text-xs text-smoke">{project.year}</span>
           </div>
         </div>
-      </div>
 
-      {/* Cover image */}
-      {project.coverImage && (
-        <div className="mt-8 overflow-hidden">
-          <img
-            src={project.coverImage}
-            alt={project.title.replace("\n", " ")}
-            className="w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
-          />
-        </div>
-      )}
+        {/* Cover image — inline on desktop, beneath on mobile */}
+        {project.coverImage && (
+          <div className="col-span-12 md:col-span-4 mt-6 md:mt-0 overflow-hidden rounded-sm aspect-[4/3]">
+            <img
+              src={project.coverImage}
+              alt={project.title.replace("\n", " ")}
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+            />
+          </div>
+        )}
+      </div>
 
       {/* Arrow indicator */}
       <div className="flex justify-end mt-4">

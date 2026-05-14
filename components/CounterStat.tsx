@@ -16,9 +16,11 @@ function fmt(n: number, decimals: number) {
 export default function CounterStat({
   value,
   label,
+  subLabel,
 }: {
   value: string;
   label: string;
+  subLabel?: string;
 }) {
   const parsed = parse(value);
   const [display, setDisplay] = useState(
@@ -68,6 +70,9 @@ export default function CounterStat({
         {display}
       </span>
       <span className="font-mono text-xs text-smoke tracking-wider">{label}</span>
+      {subLabel && (
+        <span className="font-mono text-[10px] text-smoke/60 leading-snug">{subLabel}</span>
+      )}
     </div>
   );
 }

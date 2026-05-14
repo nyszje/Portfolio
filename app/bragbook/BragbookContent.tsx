@@ -34,10 +34,12 @@ export default async function BragbookContent() {
         <CounterStat
           value={String(stats.initiatives)}
           label={t.bragbook.initiativesLabel}
+          subLabel={t.bragbook.initiativesSubLabel}
         />
         <CounterStat
           value={String(stats.categories)}
           label={t.bragbook.areasLabel}
+          subLabel={t.bragbook.areasSubLabel}
         />
         <CounterStat
           value={String(stats.years)}
